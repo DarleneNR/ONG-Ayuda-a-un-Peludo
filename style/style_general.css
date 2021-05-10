@@ -3,10 +3,37 @@ body{
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* Barra de Menú */
+nav{
+    height: 70px; /*Junto a overflow: hidden; aplicará a nuestro elemento nav el mismo alto que el más alto de sus elementos hijos */
+    width: 1000px; 
+    margin: 0 auto; /* Centro el contenedor */
+    overflow: hidden;
+    text-align: left;
+    width: 960px; /* Defino el ancho de mi página */
+    display: inline;
+    padding: 0 1em 0 0;
+}
+ul{
+    float: left;
+    list-style-type: none; /* Elimino los estilos de lista */
+    margin: 0;
+    padding: 0;
+}
+li{
+    float: left; /* Floto los li para que se dispongan horizontalmente */
+}
+li a{
+    padding: 10px; /* El padding añadirá separación entre los elementos */
+    margin-bottom: 30px;
+}
+
 /* Logo */
 #logo {
     height: 100px;
     width: 100px;
-    border-radius:500px;
+    padding: 0;
+    margin-left: 20px;
     background-color: rgb(255, 255, 255);
 }
+

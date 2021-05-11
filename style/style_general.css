@@ -10,8 +10,8 @@ nav{
     margin-right: -15px; 
     overflow: hidden;
     text-align: center;
-    /* width: 110%;  */
     display: inline;
+    touch-action: none;
 }
 ul{
     float: left;
@@ -36,9 +36,8 @@ li a{
 
 }
 #register{
-    margin-top: -225px;
+    margin-top: -218px;
     margin-left: 930px;
-
 }
 span{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -54,48 +53,80 @@ span{
     width: 110px;
     padding: 0;
     margin-left: 20px;
-    margin-top: -34px;
+    margin-top: -38px;
     background-color: rgb(255, 255, 255);
 }
 
 /* Carrusel de Imagenes  */
-.menu li:hover .submenu{
-	visibility: visible;
-	opacity: 1;
-}
 .carousel-item {
-	height: 600px;
-    font-weight: 700px;
+	height: 700px;
+    font-weight: auto;
+    width: 700px;
 }
 #carrusel{
-    margin-left: 90px;
-    padding-right: 50%;
-}
+    margin-left: 105px;
+    padding-right: 40%;
+    margin-right: -100px;
+    background: #241c55;
+    background-image: url(https://i.pinimg.com/564x/fa/6b/0d/fa6b0d27edb0f06bd1c9de76d1440d12.jpg);
+    background-repeat: repeat;
+    text-align: center;
+} 
+
+
+
+
+
+
+
+
+
+
+/* 
+.carousel-caption {
+    position: absolute;
+    right: 100%;
+    bottom: 20px;
+    left: 100%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: ivory;
+  } */
+
+
+
 
 /* Ingresar Testimonio de Adopción */
-.container-fluid {
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 100%;
-}
-.bg-light {
-    background-color: #f4f4f4!important;
-    width: 84.5%;
-}
-.pattern4-right {
-    background-image: url(https://www.ingridkuhn.com/themes/unitedpets/css/../img/patterns/pattern4-2.png);
-    background-position: right center;
-    background-repeat:no-repeat;
-    height: 250px;
-    font-weight: 600px;
-}
-.bg-light {
-    background-color: #f8f9fa!important;
-}
 section {
     background: #fff;
     padding-top: 50px;
     padding-bottom: 90px;
+}
+#intro-home {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.bg-light {
+    background-color: #f4f4f4!important;
+    margin-left: 105px;
+    margin-right: 200px;
+
+}
+.pattern4-right {
+    background-image: url(https://www.ingridkuhn.com/themes/unitedpets/css/../img/patterns/pattern4-2.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 1140px;
+}
+.bg-light {
+    background-color: #f8f9fa!important;
+}
+#cont-test{
+    margin-right: 100px;
+    padding-right: 0px;
 }
 #ingresar-testimonio h3{
     color: #000000;
@@ -123,10 +154,10 @@ section {
     border-bottom: 5px solid;
     background: rgba(0, 0, 0, 0.52);
 }
-#info {
+#información {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
 }

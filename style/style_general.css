@@ -1,39 +1,160 @@
-body{
-    background-color: #d4e6f4;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+body {
+    /* background-color: #d4e6f4; */
+    background-color: #614de5;
 }
 
 /* Barra de Menú */
 nav{
-    height: 70px; /*Junto a overflow: hidden; aplicará a nuestro elemento nav el mismo alto que el más alto de sus elementos hijos */
-    width: 1000px; 
-    margin: 0 auto; /* Centro el contenedor */
+    height: 80px; 
+    margin-left: -15px; 
+    margin-right: -15px; 
     overflow: hidden;
-    text-align: left;
-    width: 960px; /* Defino el ancho de mi página */
+    text-align: center;
+    /* width: 110%;  */
     display: inline;
-    padding: 0 1em 0 0;
 }
 ul{
     float: left;
-    list-style-type: none; /* Elimino los estilos de lista */
+    list-style-type: none; 
     margin: 0;
     padding: 0;
 }
 li{
-    float: left; /* Floto los li para que se dispongan horizontalmente */
+    float: left;
+    text-align: -webkit-match-parent;
+
 }
 li a{
-    padding: 10px; /* El padding añadirá separación entre los elementos */
+    padding: 10px; 
     margin-bottom: 30px;
+    margin-top: 15px;
+    font-style: normal;
+}
+#login{
+    margin-left: 120px;
+    margin-top: 23px;
+
+}
+#register{
+    margin-top: -225px;
+    margin-left: 930px;
+
+}
+span{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #333;
+    overflow-x: hidden;
 }
 
 /* Logo */
 #logo {
-    height: 100px;
-    width: 100px;
+    height: 110px;
+    width: 110px;
     padding: 0;
     margin-left: 20px;
+    margin-top: -34px;
     background-color: rgb(255, 255, 255);
 }
+
+/* Carrusel de Imagenes  */
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+.carousel-item {
+	height: 600px;
+    font-weight: 700px;
+}
+#carrusel{
+    margin-left: 90px;
+    padding-right: 50%;
+}
+
+/* Ingresar Testimonio de Adopción */
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+}
+.bg-light {
+    background-color: #f4f4f4!important;
+    width: 84.5%;
+}
+.pattern4-right {
+    background-image: url(https://www.ingridkuhn.com/themes/unitedpets/css/../img/patterns/pattern4-2.png);
+    background-position: right center;
+    background-repeat:no-repeat;
+    height: 250px;
+    font-weight: 600px;
+}
+.bg-light {
+    background-color: #f8f9fa!important;
+}
+section {
+    background: #fff;
+    padding-top: 50px;
+    padding-bottom: 90px;
+}
+#ingresar-testimonio h3{
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.4em;
+}
+#ingresar-testimonio p{
+    color: #8a8a8a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.4em;
+}
+
+/* Contenido */
+.call-title {
+    transition: all ease-in-out 0.3s;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 110px;
+    border-bottom: 5px solid;
+    background: rgba(0, 0, 0, 0.52);
+}
+#info {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+.call-box img {
+    -webkit-transition: 0.3s;
+    width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.h7 {
+    color: #8a8a8a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.4em;
+}
+
+
+
 

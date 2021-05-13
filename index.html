@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuda a un Peludo</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="./style/style_general.css" rel="stylesheet" type="text/css">
-    <script src="./Funciones/index.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda a un Peludo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="./style/style_general.css" rel="stylesheet" type="text/css">
+  <!-- <script src="./Funciones/index.js"></script> -->
+
+  <!-- dependencies: jQuery + Modernizr with yepnope -->
+  <script src="js/jquery-1.7.1.js"></script>
+  <script src="js/modernizr-yepnope-custom.js"></script>
+  <!-- reference the base script -->
+  <script src="js-webshim/minified/polyfiller.js"></script>
+  <script>
+	//implement all unsupported features || call polyfill before DOM-Ready to implement everything as soon and as fast as possible
+	$.webshims.polyfill();
+	//or load only specific features you need
+	//$.webshims.polyfill('forms json-storage');
+    $(function(){
+    //use all implemented API-features on DOM-ready
+	  });
+  </script>	
 </head>
 <body>
   <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -95,6 +110,7 @@
         </div>
       </div>
     </div>
+    <!-- Mensaje -->
     <div class="row" id="mensaje">
       <p>
         Nuestra principal motivación al crear Fundación Huellas unidas, fue la cantidad de animales abandonados que hay en Santiago y en todo el país. Crear conciencia de la tenencia responsable para que acaben los abandonos y los maltratos. Los animales, no tienen capacidad de razonar, pero si de sentir, frío, hambre, tristeza, desesperación, dolor, pero no pueden expresarlo facilmente, es por esto que nace esta organización sin fines de lucro, para apoyarlos y otorgarles segundas oportunidades para encontrar la felicidad.
@@ -111,6 +127,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
     integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
     crossorigin="anonymous"></script>
+    
   <!-- Fin Sección Carrusel de Imágenes -->
   <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -229,6 +246,7 @@
       </div>
 		</div>
 	</div>
+  <!-- Ingresar Testimonio -->
   <section id="intro-home" class="container-fluid bg-light pattern4-right">
     <div class="container">
         <div class="row" id="cont-test">
@@ -297,19 +315,19 @@
           </p>
           <p>
             <i class="fab fa-blogger"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Blog</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer">Blog</span></a>
             <br>
             <i class="fas fa-question-circle"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Preguntas Frecuentes</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer">Preguntas Frecuentes</span></a>
             <br>
             <i class="fas fa-handshake"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Colaboradores</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer">Colaboradores</span></a>
             <br>
             <i class="fas fa-exclamation-circle"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Denunciar maltrato animal</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer">Denunciar maltrato animal</span></a>
           </p>
-          <div class="boton-comunicate">
-            <p class="siguenos" href="#" class="btn btn-secondary aos-init aos-animate" data-aos="zoom-out" type="button">
+          <div class="back-boton-footer">
+            <p class="boton-footer" href="#" class="btn btn-secondary aos-init aos-animate" data-aos="zoom-out" type="button">
               Ver más
             </p>
           </div>
@@ -319,28 +337,16 @@
             CONTACTO
           </p>
           <p>
-            <i class="fas fa-map-marker-alt"></i>
-            <span class="titulo-colonia">
-              Recoleta  3245, Santiago, Chile
-            </span>
+            <i class="fas fa-map-marker-alt"></i><span class="part-footer">Recoleta  3245, Santiago, Chile</span>
             <br>
-            <i class="fas fa-inbox"></i>
-            <span class="titulo-colonia">
-              huellas@unidas.cl
-            </span>
+            <i class="fas fa-inbox"></i><span class="part-footer">huellas@unidas.cl</span>
             <br>
-            <i class="fas fa-phone-alt"></i>
-            <span class="titulo-colonia">
-              0241 661 181
-            </span>
+            <i class="fas fa-phone-alt"></i><span class="part-footer">0241 661 181</span>
             <br>
-            <i class="fas fa-mobile-alt"></i>
-            <span class="titulo-colonia">
-              (+56) 997 865 765
-            </span>
+            <i class="fas fa-mobile-alt"></i><span class="part-footer">(+56) 997 865 765</span>
           </p>
-          <div class="boton-ver-mas">
-            <p class="siguenos" href="#" class="btn btn-secondary aos-init aos-animate" data-aos="zoom-out" type="button">
+          <div class="back-boton-footer">
+            <p class="boton-footer" href="#" class="btn btn-secondary aos-init aos-animate" data-aos="zoom-out" type="button">
               Enviar mensaje
             </p>
           </div>
@@ -351,16 +357,16 @@
           </p>
           <p>
             <i class="fab fa-facebook-f"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Siguenos en Facebook</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Facebook</span></a>
             <br>
             <i class="fab fa-instagram"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Siguenos en Instagram</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Instagram</span></a>
             <br>
             <i class="fab fa-twitter"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Siguenos en Twitter</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Twitter</span></a>
             <br>
             <i class="fab fa-youtube"></i>
-            <a href="#" style="color: rgb(0, 0, 0);"><span class="titulo-colonia" href="#">Siguenos en Youtube</span></a>
+            <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Youtube</span></a>
           </p>
         </div>
       </div>

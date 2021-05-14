@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0pw;
+}
+body {
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+}
+
+.ibody {
+    background-color: rgba(171, 192, 192, 0.795);
+    box-shadow: 0px 1px rgba(171, 192, 192, 0.795);
+    margin: 30px auto;
+    width: 700px;
+    border: 2px solid #9aa3d4d2;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+.jumbotron {
+    padding: 16px;
+    margin-bottom: 0px;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+}
+.jumbotron h1 {
+    color: #77aca2;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 0px 1px #fff;
+}
+
+.fcontanto {
+    padding: 15px;
+}
+
+label, input[type="reset"], input[type="submit"] {
+    margin-top: 20px;
+}
+#reset {
+    margin-left: 485px;
+}
+#submit{
+    margin-left: 20px;
+}

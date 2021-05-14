@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopta un Peludo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="./style/style_general.css" rel="stylesheet" type="text/css">
+    <link href="./style/seccion_adopcion.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3-4-1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https:/kit.fontawesome.com/a50cbb9aa4.js"></script>
+    
+    <!-- dependencies: jQuery + Modernizr with yepnope -->
+    <script src="js/jquery-1.7.1.js"></script>
+    <script src="js/modernizr-yepnope-custom.js"></script>
+    <!-- reference the base script -->
+    <script src="js-webshim/minified/polyfiller.js"></script>
+    <script>
+        //implement all unsupported features || call polyfill before DOM-Ready to implement everything as soon and as fast as possible
+        $.webshims.polyfill();
+        //or load only specific features you need
+        //$.webshims.polyfill('forms json-storage');
+        $(function () {
+            //use all implemented API-features on DOM-ready
+        });
+    </script>
+</head>
+<body>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Barra de Menú -->
+    <div class="container">
+        <nav class="nav" class="navbar navbar-expand-lg navbar-light bg-light" class="navbar navbar-light"
+            style="background-color: #ffffff!important;">
+            <ul>
+                <li><a class="nav-item nav-link active" href="index.html"><img src="Imagenes/logo.jpg" id="logo"></a></li>
+                <li><a class="nav-item nav-link active" href="index.html" style="color: rgb(0, 0, 0);"><span>Home</span></a></li>
+                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Nosotros</span></a></li>
+                <li><a class="nav-item nav-link" href="seccion_adopcion.html" style="color: rgb(0, 0, 0);"><span>Adopta</span></a></li>
+                <li><a class="nav-item nav-link" href="colabora.html" style="color: rgb(0, 0, 0);"><span>Colabora</span></a></li>
+                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Servicios</span></a></li>
+                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Denuncias</span></a></li>
+                <a href="#"><i class="fab fa-whatsapp" id="telf-denuncias"></i></a>
+            </ul>
+            <div class="add-listing">
+                <a class="btn btn-dark btn-sm" href="#" id="login"><strong>Iniciar Sesión</strong></a>
+            </div>
+            <div class="add-listing">
+                <a class="btn btn-dark btn-sm" href="#" id="register"><strong>Registrarme</strong></a>
+            </div>
+        </nav>
+    </div>
+    <!-- Fin Barra de Menú -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- <header>
+    <h1>Bienvenidos a la Fundación Ayuda a un Peludo</h1>
+    </header> -->
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Sección rescatados -->
+    <div class="container">
+        <h1>Nuestras secciones de ayuda</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <img src="https://cdn-pro.elsalvador.com/wp-content/uploads/2020/08/Gatos-Los-Chorros_08.jpg" alt="Opción Gatos" height="210px">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <a href="#">Gatos</a>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <img src="https://alimentosdemascotas.uy/wp-content/uploads/2018/09/fotos-manada-de-perros01.jpg" alt="Opción Perros" height="233px">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <a href="#">Perros</a>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Sección rescatados -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Pie de Pagina -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="titulo">
+                        MÁS INFORMACIÓN
+                    </p>
+                    <p>
+                        <i class="fab fa-blogger"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Blog</span></a>
+                        <br>
+                        <i class="fas fa-question-circle"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Preguntas Frecuentes</span></a>
+                        <br>
+                        <i class="fas fa-handshake"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Colaboradores</span></a>
+                        <br>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Denunciar maltrato animal</span></a>
+                    </p>
+                    <div class="back-boton-footer">
+                        <p class="boton-footer" href="#" class="btn btn-secondary aos-init aos-animate" data-aos="zoom-out" type="button">
+                            Ver más
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="titulo">
+                        CONTACTO
+                    </p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i><span class="part-footer">Recoleta 3245, Santiago, Chile</span>
+                        <br>
+                        <i class="fas fa-inbox"></i><span class="part-footer">huellas@unidas.cl</span>
+                        <br>
+                        <i class="fas fa-phone-alt"></i><span class="part-footer">0241 661 181</span>
+                        <br>
+                        <i class="fas fa-mobile-alt"></i><span class="part-footer">(+56) 997 865 765</span>
+                    </p>
+                    <div class="back-boton-footer">
+                        <p class="boton-footer" href="#" class="btn btn-secondary aos-init aos-animate" data-aos="zoom-out" type="button">
+                            Enviar mensaje
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="titulo">
+                        REDES SOCIALES
+                    </p>
+                    <p>
+                        <i class="fab fa-facebook-f"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Facebook</span></a>
+                        <br>
+                        <i class="fab fa-instagram"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Instagram</span></a>
+                        <br>
+                        <i class="fab fa-twitter"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Twitter</span></a>
+                        <br>
+                        <i class="fab fa-youtube"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Youtube</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <div id="pie-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <p class="titulo-footer">
+                        Copyright © 2021 All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Pie de Pagina -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+</body>
+    <!-- Pie de Página -->
+    <script src="https://code.jquery.com/jquery-3-4-1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https:/kit.fontawesome.com/a50cbb9aa4.js"></script>
+</html>

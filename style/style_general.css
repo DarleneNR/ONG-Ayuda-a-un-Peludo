@@ -48,6 +48,7 @@ span{
     margin-top: 22px;
     margin-left: -5px;
     font-size: 30px;
+    color: black;
 }
 
 /* Logo */
@@ -60,253 +61,19 @@ span{
     background-color: rgb(255, 255, 255);
 }
 
-/* Carrusel de Imagenes  */
-.carousel-item {
-  height: 110vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-#carrusel{
-    margin-left: 105px;
-    padding-right: 40%;
-    padding-top: 20px;
-    padding-bottom: 290px;
-    /* background-image: url(https://i.pinimg.com/564x/fa/6b/0d/fa6b0d27edb0f06bd1c9de76d1440d12.jpg); */
-    background: linear-gradient(to bottom, rgba(49, 46, 46, 0.664), rgba(49, 46, 46, 0.664), rgba(49, 46, 46, 0.664)), url(https://i.pinimg.com/564x/fa/6b/0d/fa6b0d27edb0f06bd1c9de76d1440d12.jpg);
-    background-repeat: repeat;
-}
-/* Mensaje */
-#mensaje {
-    text-align: center;
-    margin-left: 620px;
-    margin-right: 100px;
-    margin-top: -500px;
-    padding-bottom: 0px;
-    width: 450px;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-}
-
-/* Directiva */
-#directiva{
-    margin-left: 105px;
-    margin-right: 103px;
-    background-image: url(https://i.pinimg.com/236x/02/19/87/021987ba79c9777fd0d184a225f7a70f.jpg);
-    background-repeat:repeat;
-    padding: 1px;
-    line-height: normal;
-    padding-bottom: 10px;
-}
-.block-title {
-    text-align: center;
-    letter-spacing: 2px;
-    position: relative;
-    margin: 0 0 35px;
-    font-weight: bolder;
-}
-#titulo-d{
-    font-family: 'Montserrat', sans-serif;
-    color: #e7ffef;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 30px;
-
-}
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}
-#integrante1 {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-left: -55px;
-    margin-top: 45px;
-}
-#integrante2  {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-left: 825px;
-    margin-top: -190px;
-}
-#integrante3 {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 20px;
-    margin-left: -50px;
-    margin-top: 60px;
-} 
-#integrante4 {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-left: 825px;
-    margin-top: -195px;
-}
-.entry-title a{
-    font-family: 'Montserrat', sans-serif;
-    color:rgba(248, 168, 76, 0.52);
-}
-.text-center {
-    font-family: 'Montserrat', sans-serif;
-    color: #ffff;
-}
-
-/* Testimonios */
-#testimonios{
-    background-color: white;
-    margin-left: 105px;
-    margin-right: 103px;
-}
-#test-1{
-    margin-left: 370px;
-    margin-bottom:0px;
-}
-#test-2{
-    margin-left: 370px;
-    margin-bottom:0px;
-}
-#name-test1{
-    margin-left: 500px;
-    margin-bottom:0px;
-    font-family: 'Montserrat', sans-serif;
-    color: #8d1241;
-    font-weight: 400;
-    text-transform: uppercase;
-    line-height: 1.3;
-    letter-spacing: 1px;
-    font-size: 14px;
-}
-#name-test2{
-    margin-left: 500px;
-    margin-bottom:0px;
-    font-family: 'Montserrat', sans-serif;
-    color: #8d1241;
-    font-weight: 400;
-    text-transform: uppercase;
-    line-height: 1.3;
-    letter-spacing: 1px;
-    font-size: 14px;
-}
-#text-test-1{
-    padding-left: 180px; 
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
-    color: #8d1241;
-    font-size: 13px;
-    margin-bottom:25px;
-}
-#text-test-2{
-    padding-left: 180px; 
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
-    color: #8d1241;
-    font-size: 13px;
-}
-/* Ingresar Testimonio de Adopción */
-section {
-    background: #fff;
-    padding-top: 50px;
-    padding-bottom: 90px;
-}
-#intro-home {
-    padding-top: 90px;
-    padding-left: 50px;
-    padding-right: 0px;
-}
-.bg-light {
-    background-color: #f4f4f4!important;
-    margin-left: 105px;
-    margin-right: 200px;
-}
-.pattern4-right {
-    background-image: url(https://www.ingridkuhn.com/themes/unitedpets/css/../img/patterns/pattern4-2.png);
-    background-position: right;
-    background-repeat: no-repeat;
-    height: 300px;
-    width: 1141px;
-}
-.bg-light {
-    background-color: #f8f9fa!important;
-}
-#cont-test{
-    margin-right: 100px;
-    padding-right: 0px;
-}
-#ingresar-testimonio h3{
-    color: #000000;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    margin-bottom: 20px;
-    line-height: 1.4em;
-}
-#ingresar-testimonio p{
-    color: #8a8a8a;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2em;
-    font-weight: 300;
-    margin-bottom: 20px;
-    line-height: 1.4em;
-}
-
-/* Información */
-.call-title {
-    transition: all ease-in-out 0.3s;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 110px;
-    border-bottom: 5px solid;
-    background: rgba(0, 0, 0, 0.52);
-}
-#información {
-    font-weight: bold;
-    background-color: rgb(255, 255, 255);
-}
-h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2em;
-    color: #222;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.1;
-}
-.call-box img {
-    -webkit-transition: 0.3s;
-    width: 100%;
-}
-img {
-    vertical-align: middle;
-    border-style: none;
-}
-.h7 {
-    color: #8a8a8a;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2em;
-    font-weight: 300;
-    margin-bottom: 20px;
-    line-height: 1.4em;
-}
-
 /* Pie de página */
 #footer {
     background: linear-gradient(to bottom, rgba(144, 197, 240, 0.1), rgba(137, 172, 201, 0.380), rgba(37, 76, 107, 0.700)), url(https://i.pinimg.com/236x/c3/5d/11/c35d1163425848f4b59777381c23e7cf.jpg);
     width: 100%;
-    height: 338px;
+    height: 328px;
+    margin-top: 0px;
 }
 #pie-footer {
     background-color: #000;
     width: 100%;
     height: 50px;
+    position: absolute;
+
 }
 .titulo-footer {
     color: #fff;
@@ -334,14 +101,7 @@ img {
     -moz-border-radius: 28;
     border-radius: 28px;
 }
-.boton-ver-mas {
-    background-color: yellow;
-    width: 50%;
-    height: 40px;
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 28px;
-}
+
 .boton-footer {
     color: #000;
     text-align: center;
@@ -349,11 +109,3 @@ img {
     top: 7px;
     font-weight: 700;
 }
-
-
-
-
-
-
-
-

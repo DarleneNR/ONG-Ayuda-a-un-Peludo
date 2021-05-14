@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopta un Peludo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="./style/style_general.css" rel="stylesheet" type="text/css">
+    <link href="./style/colabora.css" rel="stylesheet" type="text/css">
+    
+    <script src="https://code.jquery.com/jquery-3-4-1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https:/kit.fontawesome.com/a50cbb9aa4.js"></script>
+
+    <!-- dependencies: jQuery + Modernizr with yepnope -->
+    <script src="js/jquery-1.7.1.js"></script>
+    <script src="js/modernizr-yepnope-custom.js"></script>
+    <!-- reference the base script -->
+    <script src="js-webshim/minified/polyfiller.js"></script>
+    <script>
+        //implement all unsupported features || call polyfill before DOM-Ready to implement everything as soon and as fast as possible
+        $.webshims.polyfill();
+        //or load only specific features you need
+        //$.webshims.polyfill('forms json-storage');
+        $(function () {
+            //use all implemented API-features on DOM-ready
+        });
+    </script>
+
+    <!-- Validación JQuery -->
+    <script>
+    function validarFormulario(scontacto) {
+        // Validación de la edad: Comprueba si el dato ha sido introducido, si es un número y si es mayor de edad.
+        if($("input[name*='lname']").val().length>4){
+            if(isNaN(parseInt($("input[name*='edad']").val()))) {
+                alert('Escriba correctamente su edad.');
+                return false; 
+            }else{
+                if((parseInt($("input[name*='edad']").val()))<18){
+                    alert('El registro es para mayores de 18 años.');
+                    return false;                 
+                }
+            }
+        }else{
+            alert('Falta por rellenar el campo "Edad"');
+            return false;            
+        }            
+        
+        // Validación del Código Postal (en España son 5 caracteres numéricos): Comprueba si el dato ha sido introducido y si cumple con el patrón indicado.
+        var patronCP=/(^([0-9]{5,5})|^)$/;
+        if($("input[name*='cp']").val().length>0){
+            if (!(patronCP.test(formulario.cp.value))) {
+                alert('Contenido del código postal no es un código postal válido');
+                return false; 
+            }            
+        }else{
+            alert('Falta por rellenar el campo "Código Postal"');
+            return false;                
+        }
+     
+        // Validación de DNI: Comprueba si el DNI es correcto.
+        if($("input[name*='dni']").val().length>0){
+            
+            //Recogemos el valor del DNI en una variable.
+            var dni = $("input[name*='dni']").val();
+                
+            // En caso que ponga el DNI con guión, se suprime.
+            if((dni.length==10)&&(dni.indexOf('-') != -1)){            
+                dni = dni.replace('-', '');
+            }
+            
+            // En caso que ponga el guión pero le faltan números de identificación
+            if(((dni.length<10)||(dni.length>10))&&(dni.indexOf('-') != -1)){            
+              alert("Debe de escribir un DNI correcto");
+              return false;    
+            }    
+     
+            //Se separan los números de la letra
+            var letraDNI = dni.substring(8, 9).toUpperCase();
+            var numDNI = parseInt(dni.substring(0, 8));
+            
+            //Se calcula la letra correspondiente al número
+            var letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T'];
+            var letraCorrecta = letras[numDNI % 23];
+     
+            if(letraDNI!= letraCorrecta){
+              alert("Debe de escribir un DNI correcto");
+              return false;    
+            }
+        }else{
+              alert('Falta por rellenar el campo "DNI"');
+              return false;                
+        }
+        
+        // Validación del correo electrónico: Comprueba si el dato ha sido introducido y si es un correo electrónico 
+        if($("input[name*='email']").val().length>0){
+            var patronEmail=/^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;       
+            if (!(patronEmail.test($("input[name*='email']").val()))) {
+                alert('Contenido del email no es un correo electrónico válido.');
+                return false; 
+            }            
+        }else{
+            alert('Falta por rellenar el campo "Email"');
+            return false;                
+        }
+        // Validación del Sistema Operativo: Comprueba si el dato ha sido introducido 
+        if($("select[name*='so']").val().length<1){
+            alert('Seleccione un Sistema Operativo.');
+            return false;
+        }        
+        // Validación de horas de programación: Comprueba si el dato ha sido introducido 
+        if($("input[name='horas']:checked").length < 1) {
+            alert('Seleccione cuántas horas ha programado.');
+            return false;
+        }        
+        // Validación del correo electrónico: Comprueba si acepta enviar el formulario 
+        if(!$("input[name*='condiciones']").is(":checked")){
+            alert('Debe de aceptar el envío de este formulario.');
+            return false;                
+        }    
+    }
+    </script>
+</head>
+<body>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Barra de Menú -->
+    <div class="container">
+        <nav class="nav" class="navbar navbar-expand-lg navbar-light bg-light" class="navbar navbar-light"
+            style="background-color: #ffffff!important;">
+            <ul>
+                <li><a class="nav-item nav-link active" href="index.html"><img src="Imagenes/logo.jpg" id="logo"></a></li>
+                <li><a class="nav-item nav-link active" href="index.html" style="color: rgb(0, 0, 0);"><span>Home</span></a></li>
+                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Nosotros</span></a></li>
+                <li><a class="nav-item nav-link" href="seccion_adopcion.html" style="color: rgb(0, 0, 0);"><span>Adopta</span></a></li>
+                <li><a class="nav-item nav-link" href="colabora.html" style="color: rgb(0, 0, 0);"><span>Colabora</span></a></li>
+                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Servicios</span></a></li>
+                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Denuncias</span></a></li>
+                <a href="#"><i class="fab fa-whatsapp" id="telf-denuncias"></i></a>
+            </ul>
+            <div class="add-listing">
+                <a class="btn btn-dark btn-sm" href="#" id="login"><strong>Iniciar Sesión</strong></a>
+            </div>
+            <div class="add-listing">
+                <a class="btn btn-dark btn-sm" href="#" id="register"><strong>Registrarme</strong></a>
+            </div>
+        </nav>
+    </div>
+    <!-- Fin Barra de Menú -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- <header>
+    <h1>Bienvenidos a la Fundación Ayuda a un Peludo</h1>
+    </header> -->
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Registrar Contacto -->
+    <div class="container">
+        <div class="ibody">
+            <div class="jumbotron">
+                <h1>Contacto</h1>
+            </div>
+            <div class="fcontanto">
+                <form action="submit.action" class="form-horizontal" action="./" id="scontacto" name="scontacto" method="post">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="fname" class="control-label col-xs-2">Nombre</label>
+                            <input id="fname" name="fname" type="text" placeholder="Nombre(s)" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="lname" class="control-label col-xs-2">Apellido</label>
+                            <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="nro-doc" class="control-label col-xs-2">Nro. Documento</label>
+                            <input id="nro-doc" name="nro-doc" type="text" placeholder="Número de documento" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="tipo-doc">Tipo Documento</label>
+                            <select id="tipo-doc" name="tipo-doc"class="form-control" required>
+                                <option value="Rut">Rut</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="email" class="control-label col-xs-2">Correo electr&oacute;nico</label>
+                    <input id="email" name="email" type="email" placeholder="Correo electr&oacute;nico" class="form-control" required>
+
+                    <label for="phone" class="control-label col-xs-2">Número celular</label>
+                    <input id="phone" name="phone" type="number" placeholder="Celular" class="form-control">
+
+                    <label for="city" class="control-label col-xs-2">Ciudad</label>
+                    <input id="city" name="city" type="text" placeholder="Ciudad de residencia" class="form-control" required>
+
+                    <label for="message" class="control-label col-xs-2">Asunto</label>
+                    <textarea class="form-control" id="message" name="message" placeholder="Introduzca su masaje para nosotros aquí." rows="7"></textarea>
+                    
+                    <div class="botones">
+                        <input id="reset" name="reset" type="reset" class="btn btn-info" value="Limpiar">
+                        <input id="submit" name="submit" type="submit" class="btn btn-info" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+    <!-- Registrar Contacto -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Pie de Pagina -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="titulo">
+                        MÁS INFORMACIÓN
+                    </p>
+                    <p>
+                        <i class="fab fa-blogger"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Blog</span></a>
+                        <br>
+                        <i class="fas fa-question-circle"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Preguntas Frecuentes</span></a>
+                        <br>
+                        <i class="fas fa-handshake"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Colaboradores</span></a>
+                        <br>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer">Denunciar maltrato
+                                animal</span></a>
+                    </p>
+                    <div class="back-boton-footer">
+                        <p class="boton-footer" href="#" class="btn btn-secondary aos-init aos-animate"
+                            data-aos="zoom-out" type="button">
+                            Ver más
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="titulo">
+                        CONTACTO
+                    </p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i><span class="part-footer">Recoleta 3245, Santiago, Chile</span>
+                        <br>
+                        <i class="fas fa-inbox"></i><span class="part-footer">huellas@unidas.cl</span>
+                        <br>
+                        <i class="fas fa-phone-alt"></i><span class="part-footer">0241 661 181</span>
+                        <br>
+                        <i class="fas fa-mobile-alt"></i><span class="part-footer">(+56) 997 865 765</span>
+                    </p>
+                    <div class="back-boton-footer">
+                        <p class="boton-footer" href="#" class="btn btn-secondary aos-init aos-animate" data-aos="zoom-out" type="button">
+                            Enviar mensaje
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="titulo">
+                        REDES SOCIALES
+                    </p>
+                    <p>
+                        <i class="fab fa-facebook-f"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Facebook</span></a>
+                        <br>
+                        <i class="fab fa-instagram"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Instagram</span></a>
+                        <br>
+                        <i class="fab fa-twitter"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Twitter</span></a>
+                        <br>
+                        <i class="fab fa-youtube"></i>
+                        <a href="#" style="color: #272727;"><span class="part-footer" href="#">Siguenos en Youtube</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <div id="pie-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <p class="titulo-footer">
+                        Copyright © 2021 All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Pie de Pagina -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+</body>
+    <!-- Registrar Contacto -->
+    <script src=“https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js” integrity=“sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS”
+    crossorigin=“anonymous”></script>
+</html>

@@ -9,11 +9,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="./style/style_general.css" rel="stylesheet" type="text/css">
     <link href="./style/colabora.css" rel="stylesheet" type="text/css">
-    
-    <script src="https://code.jquery.com/jquery-3-4-1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https:/kit.fontawesome.com/a50cbb9aa4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <!-- dependencies: jQuery + Modernizr with yepnope -->
     <script src="js/jquery-1.7.1.js"></script>
@@ -31,16 +28,23 @@
     </script>
 
     <!-- Validación JQuery -->
-    <script>
+    <!-- <script>
     function validarFormulario(scontacto) {
+        var nombre = $("#fname").val();
+        var apellido = $("#lname").val();;
+        var nro_doc = $("#nro-doc").val();;
+        var email = $("#email");
+        var ciudad = $("#city");
+        var asunto = $("#message");
+
         // Validación de la edad: Comprueba si el dato ha sido introducido, si es un número y si es mayor de edad.
-        if($("input[name*='lname']").val().length>4){
-            if(isNaN(parseInt($("input[name*='edad']").val()))) {
-                alert('Escriba correctamente su edad.');
+        if(length(nombre) ){
+            if(length(nombre) == "") {
+                alert('Escriba nombre correcto');
                 return false; 
             }else{
-                if((parseInt($("input[name*='edad']").val()))<18){
-                    alert('El registro es para mayores de 18 años.');
+                if(lenght(nombre) > 3){
+                    alert('Debe ingresar un nombre válidp.');
                     return false;                 
                 }
             }
@@ -123,6 +127,46 @@
         }    
     }
     </script>
+ -->
+
+    <!-- Validación de formulario -->
+
+    <script>
+        $(document).ready(function(){
+          $(".btn1").click(function(){
+            $("p").fadeOut();
+          });
+          $(".btn2").click(function(){
+            $("p").fadeIn();
+          });
+        });
+        </script>
+        
+        
+    <script>
+        var patronEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/; 
+
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                var nombre = $("#fname").val();
+                var apellido = $("#lname").val();
+                var nro_doc = $("#nro-doc").val();
+                var email = $("#email").val();;
+                var ciudad = $("#city").val();;
+                var asunto = $("#message").val();;
+
+                if ($("#fname") == "") {
+                    $("#hola").fadeIn();
+                    return false;
+                }else{
+                    $("#hola").fadeOut();
+                    
+                    }
+            });
+            
+        });
+    </script>
+
 </head>
 <body>
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -167,11 +211,14 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="fname" class="control-label col-xs-2">Nombre</label>
-                            <input id="fname" name="fname" type="text" placeholder="Nombre(s)" class="form-control" required>
+                            <input id="fname" name="fname" type="text" placeholder="Nombre(s)" class="form-control">
+                            <div id="mensaje1" class="errores">Ingresa tu nombre</div>
+                            <div id="hola" class="error">Holaa</div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="lname" class="control-label col-xs-2">Apellido</label>
                             <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required>
+                            <div id="mensaje2" class="errores">Ingresa tu apellido</div>
                         </div>
                     </div>
 
@@ -179,6 +226,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="nro-doc" class="control-label col-xs-2">Nro. Documento</label>
                             <input id="nro-doc" name="nro-doc" type="text" placeholder="Número de documento" class="form-control" required>
+                            <div id="mensaje3" class="errores">Debes ingresar un n° de documento válido</div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="tipo-doc">Tipo Documento</label>
@@ -191,12 +239,14 @@
 
                     <label for="email" class="control-label col-xs-2">Correo electr&oacute;nico</label>
                     <input id="email" name="email" type="email" placeholder="Correo electr&oacute;nico" class="form-control" required>
+                    <div id="mensaje4" class="errores">Ingresa un correo válido</div>
 
                     <label for="phone" class="control-label col-xs-2">Número celular</label>
                     <input id="phone" name="phone" type="number" placeholder="Celular" class="form-control">
 
                     <label for="city" class="control-label col-xs-2">Ciudad</label>
                     <input id="city" name="city" type="text" placeholder="Ciudad de residencia" class="form-control" required>
+                    <div id="mensaje6" class="errores">Debes ingresar una Ciudad</div>
 
                     <label for="message" class="control-label col-xs-2">Asunto</label>
                     <textarea class="form-control" id="message" name="message" placeholder="Introduzca su masaje para nosotros aquí." rows="7"></textarea>
@@ -209,7 +259,20 @@
             </div>
         </div>
     </div>    
-    <!-- Registrar Contacto -->
+    <!-- Fin Registrar Contacto -->
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -298,7 +361,5 @@
     <!-- Fin Pie de Pagina -->
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
 </body>
-    <!-- Registrar Contacto -->
-    <script src=“https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js” integrity=“sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS”
-    crossorigin=“anonymous”></script>
+
 </html>

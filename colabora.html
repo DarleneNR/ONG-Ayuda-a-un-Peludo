@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopta un Peludo</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="./style/style_general.css" rel="stylesheet" type="text/css">
     <link href="./style/colabora.css" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script>src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"</script>
+    
+    <!-- Adaptabilidad para los navegadores -->
     <!-- dependencies: jQuery + Modernizr with yepnope -->
     <script src="js/jquery-1.7.1.js"></script>
     <script src="js/modernizr-yepnope-custom.js"></script>
@@ -32,7 +33,7 @@
     function validarFormulario(scontacto) {
         var nombre = $("#fname").val();
         var apellido = $("#lname").val();;
-        var nro_doc = $("#nro-doc").val();;
+        var nro_doc = $("#nro_doc").val();;
         var email = $("#email");
         var ciudad = $("#city");
         var asunto = $("#message");
@@ -130,70 +131,201 @@
  -->
 
     <!-- Validación de formulario -->
-
-    <script>
-        $(document).ready(function(){
-          $(".btn1").click(function(){
-            $("p").fadeOut();
-          });
-          $(".btn2").click(function(){
-            $("p").fadeIn();
-          });
+    <!-- <script>
+        $(document).ready(function() {
+            $("#scontacto").validate({
+                rules: {
+                    fname: {
+                        required: true,
+                        minlength: 3
+                    },
+                    lname: {
+                        required: true,
+                        minlength: 3
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    city: {
+                        required: true,
+                        email: true
+                    },
+                    message: {
+                        required: true,
+                        minlength: 5
+                    }
+                },
+                messages: {
+                    fname: {
+                        required: "Debes completar tu Nombre",
+                        minlength: "Tu nombre debe tener al menos 3 caracteres"
+                    },
+                    lname: {
+                        required: "Debes completar tu Apellido",
+                        minlength: "Tu apellido debe tener al menos 3 caracteres"
+                    },
+                    message: {
+                        required: "El campo comentarios es obligatorio",
+                        minlength: "El campo comentario debe tener al menos 5 caracteres"
+                    },
+                    email: "Debes ingresar un email valido"
+                }
+ 
+            });
         });
-        </script>
-        
-        
+
+    </script> -->
+
     <script>
         var patronEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/; 
-
+        /* Nombre */
         $(document).ready(function(){
             $("#submit").click(function(){
                 var nombre = $("#fname").val();
-                var apellido = $("#lname").val();
-                var nro_doc = $("#nro-doc").val();
-                var email = $("#email").val();;
-                var ciudad = $("#city").val();;
-                var asunto = $("#message").val();;
-
-                if ($("#fname") == "") {
-                    $("#hola").fadeIn();
+                if (nombre == "") {
+                    $("#mensaje1").fadeIn();
                     return false;
-                }else{
-                    $("#hola").fadeOut();
-                    
+                }else {
+                    if (nombre.lenght < 3) {
+                        $("#mensaje1.2").fadeIn();
+                        return false;
+                    }else {
+                        $("#mensaje1.2").fadeOut();
+                        return false;
                     }
+                    $("#mensaje1").fadeOut();
+                    return false;
+                }
             });
-            
+            /* Apellido */
+            $("#submit").click(function(){
+                var apellido = $("#lname").val();
+                if (apellido == "") {
+                    $("#mensaje2").fadeIn();
+                    return false;
+                }else {
+                    if (apellido.lenght < 3) {
+                        $("#mensaje2.2").fadeIn();
+                        return false;
+                    }else {
+                        $("#mensaje2.2").fadeOut();
+                        return false;
+                    }
+                    $("#mensaje2").fadeOut();
+                    return false;
+                }
+            });
+            /* Número de Documento */
+            $("#submit").click(function(){
+                var nro_doc = $("#nro_doc").val();
+                if (nro_doc == "") {
+                    $("#mensaje3").fadeIn();
+                    return false;
+                }else {
+                    if (nro_doc.lenght < 11) {
+                        $("#mensaje3.2").fadeIn();
+                        return false;
+                    }else {
+                        $("#mensaje3.2").fadeOut();
+                        return false;
+                    }
+                    $("#mensaje3").fadeOut();
+                    return false;
+                }
+            });
+            /* Email */
+            $("#submit").click(function(){
+                var email = $("#email").val();
+                if (email == "") {
+                    $("#mensaje4").fadeIn();
+                    return false;
+                }else {
+
+                    $("#mensaje4").fadeOut();
+                    return false;
+                }
+            });
+            /* Telefono */
+            $("#submit").click(function(){
+                var phone = $("#phone").val();
+                if (phone.lenght < 9 || phone.lenght > 9) {
+                    $("#mensaje5").fadeIn();
+                    return false;
+                }else {
+                    $("#mensaje5").fadeOut();
+                    return false;
+                }
+            });
+            /* Ciudad */
+            $("#submit").click(function(){
+                var ciudad = $("#city").val();
+                if (ciudad == "") {
+                    $("#mensaje6").fadeIn();
+                    return false;
+                }else {
+                    if (ciudad.lenght < 5) {
+                        $("#mensaje6.2").fadeIn();
+                        return false;
+                    }else {
+                        $("#mensaje6.2").fadeOut();
+                        return false;
+                    }
+                    $("#mensaje6").fadeOut();
+                    return false;
+                }
+            });
+            /* Comentarios */
+            $("#submit").click(function(){
+                var comentario = $("#message").val();
+                if (comentario == "") {
+                    $("#mensaje7").fadeIn();
+                    return false;
+                }else {
+                    if (comentario.lenght < 5) {
+                        $("#mensaje7.2").fadeIn();
+                        return false;
+                    }else {
+                        $("#mensaje7.2").fadeOut();
+                        return false;
+                    }
+                    $("#mensaje7").fadeOut();
+                    return false;
+                }
+            });
         });
     </script>
 
 </head>
 <body>
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- Barra de Menú -->
-    <div class="container">
-        <nav class="nav" class="navbar navbar-expand-lg navbar-light bg-light" class="navbar navbar-light"
-            style="background-color: #ffffff!important;">
-            <ul>
-                <li><a class="nav-item nav-link active" href="index.html"><img src="Imagenes/logo.jpg" id="logo"></a></li>
-                <li><a class="nav-item nav-link active" href="index.html" style="color: rgb(0, 0, 0);"><span>Home</span></a></li>
-                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Nosotros</span></a></li>
-                <li><a class="nav-item nav-link" href="seccion_adopcion.html" style="color: rgb(0, 0, 0);"><span>Adopta</span></a></li>
-                <li><a class="nav-item nav-link" href="colabora.html" style="color: rgb(0, 0, 0);"><span>Colabora</span></a></li>
-                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Servicios</span></a></li>
-                <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Denuncias</span></a></li>
-                <a href="#"><i class="fab fa-whatsapp" id="telf-denuncias"></i></a>
-            </ul>
-            <div class="add-listing">
-                <a class="btn btn-dark btn-sm" href="#" id="login"><strong>Iniciar Sesión</strong></a>
-            </div>
-            <div class="add-listing">
-                <a class="btn btn-dark btn-sm" href="#" id="register"><strong>Registrarme</strong></a>
-            </div>
-        </nav>
-    </div>
-    <!-- Fin Barra de Menú -->
-    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <!-- Barra de Menú -->
+  <div class="container">
+    <nav class="nav" class="navbar navbar-expand-lg navbar-light bg-light" class="navbar navbar-light"
+      style="background-color: #ffffff!important;">
+      <ul>
+        <li><a class="nav-item nav-link active" href="index.html"><img src="Imagenes/logo.jpg" id="logo"></a></li>
+        <li><a class="nav-item nav-link active" href="index.html" style="color: rgb(0, 0, 0);"><span>Home</span></a>
+        </li>
+        <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Nosotros</span></a></li>
+        <li><a class="nav-item nav-link" href="seccion_adopcion.html"
+            style="color: rgb(0, 0, 0);"><span>Adopta</span></a></li>
+        <li><a class="nav-item nav-link" href="colabora.html" style="color: rgb(0, 0, 0);"><span>Colabora</span></a>
+        </li>
+        <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Servicios</span></a></li>
+        <li><a class="nav-item nav-link" href="#" style="color: rgb(0, 0, 0);"><span>Denuncias</span></a></li>
+        <a href="#"><i class="fab fa-whatsapp" id="telf-denuncias"></i></a>
+      </ul>
+      <div class="add-listing">
+        <a class="btn btn-dark btn-sm" href="#" id="login"><strong>Iniciar Sesión</strong></a>
+      </div>
+      <div class="add-listing">
+        <a class="btn btn-dark btn-sm" href="#" id="register"><strong>Registrarme</strong></a>
+      </div>
+    </nav>
+  </div>
+  <!-- Fin Barra de Menú -->
+  <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
     <!-- <header>
     <h1>Bienvenidos a la Fundación Ayuda a un Peludo</h1>
@@ -201,56 +333,63 @@
 
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!-- Registrar Contacto -->
-    <div class="container">
+    <!-- <div class="container"> -->
         <div class="ibody">
             <div class="jumbotron">
                 <h1>Contacto</h1>
             </div>
             <div class="fcontanto">
-                <form action="submit.action" class="form-horizontal" action="./" id="scontacto" name="scontacto" method="post">
-                    <div class="row">
+                <form class="form-horizontal" id="scontacto" name="scontacto" action="" method="post">
+                    <div class="row justify-content-md-center">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="fname" class="control-label col-xs-2">Nombre</label>
-                            <input id="fname" name="fname" type="text" placeholder="Nombre(s)" class="form-control">
-                            <div id="mensaje1" class="errores">Ingresa tu nombre</div>
-                            <div id="hola" class="error">Holaa</div>
+                            <input id="fname" name="fname" type="text" placeholder="Nombre(s)" class="form-control" required>
+                            <label id="mensaje1" class="errores">Ingresa tu nombre</label>
+                            <label id="mensaje1.2" class="errores">Debes ingresar un nombre v&aacute;lido</label>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="lname" class="control-label col-xs-2">Apellido</label>
                             <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required>
-                            <div id="mensaje2" class="errores">Ingresa tu apellido</div>
+                            <label id="mensaje2" class="errores">Ingresa tu apellido</label>
+                            <label id="mensaje2.2" class="errores">Debes ingresar un apellido v&aacute;lido</label>
                         </div>
                     </div>
-
-                    <div class="row">
+                    <br>
+                    <div class="row justify-content-md-center">
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                            <label for="nro-doc" class="control-label col-xs-2">Nro. Documento</label>
-                            <input id="nro-doc" name="nro-doc" type="text" placeholder="Número de documento" class="form-control" required>
-                            <div id="mensaje3" class="errores">Debes ingresar un n° de documento válido</div>
+                            <label for="nro_doc" class="control-label col-xs-2">Nro. Documento</label>
+                            <input id="nro_doc" name="nro_doc" type="text" placeholder="Número de documento" class="form-control" required>
+                            <label id="mensaje3" class="errores">Debes ingresar un n° de documento</label>
+                            <label id="mensaje3.2" class="errores">Debes ingresar un n° de documento v&aacute;lido</label>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                            <label for="tipo-doc">Tipo Documento</label>
-                            <select id="tipo-doc" name="tipo-doc"class="form-control" required>
+                            <label for="tipo_doc">Tipo Documento</label>
+                            <select id="tipo_doc" name="tipo_doc"class="form-control" required>
                                 <option value="Rut">Rut</option>
                                 <option value="Pasaporte">Pasaporte</option>
                             </select>
                         </div>
                     </div>
-
+                    <br>
                     <label for="email" class="control-label col-xs-2">Correo electr&oacute;nico</label>
                     <input id="email" name="email" type="email" placeholder="Correo electr&oacute;nico" class="form-control" required>
-                    <div id="mensaje4" class="errores">Ingresa un correo válido</div>
-
+                    <label id="mensaje4" class="errores">Ingresa un correo</label>
+                    <label id="mensaje4.2" class="errores">Ingresa un correo v&aacute;lido</label>
+                    <br>
                     <label for="phone" class="control-label col-xs-2">Número celular</label>
                     <input id="phone" name="phone" type="number" placeholder="Celular" class="form-control">
-
+                    <label id="mensaje5" class="errores">Debes un n&uacute;mero telef&oacute;nico v&aacute;lida</label>
+                    <br>
                     <label for="city" class="control-label col-xs-2">Ciudad</label>
                     <input id="city" name="city" type="text" placeholder="Ciudad de residencia" class="form-control" required>
-                    <div id="mensaje6" class="errores">Debes ingresar una Ciudad</div>
-
+                    <label id="mensaje6" class="errores">Debes ingresar una Ciudad</label>
+                    <label id="mensaje6.2" class="errores">Debes ingresar una Ciudad v&aacute;lida</label>
+                    <br>
                     <label for="message" class="control-label col-xs-2">Asunto</label>
-                    <textarea class="form-control" id="message" name="message" placeholder="Introduzca su masaje para nosotros aquí." rows="7"></textarea>
-                    
+                    <textarea class="form-control" id="message" name="message" placeholder="Introduzca su mensaje para nosotros aquí." rows="5" required></textarea>
+                    <label id="mensaje7" class="errores">D&eacute;janos tu comentario</label>
+                    <label id="mensaje7.2" class="errores">Debe ingresar al menos 5 caracteres</label>
+
                     <div class="botones">
                         <input id="reset" name="reset" type="reset" class="btn btn-info" value="Limpiar">
                         <input id="submit" name="submit" type="submit" class="btn btn-info" value="Enviar">
@@ -258,7 +397,7 @@
                 </form>
             </div>
         </div>
-    </div>    
+    <!-- </div> -->
     <!-- Fin Registrar Contacto -->
 
 
@@ -361,5 +500,9 @@
     <!-- Fin Pie de Pagina -->
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------->
 </body>
-
+    <!-- Pie de Página -->
+    <script src="https://code.jquery.com/jquery-3-4-1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https:/kit.fontawesome.com/a50cbb9aa4.js"></script>
 </html>

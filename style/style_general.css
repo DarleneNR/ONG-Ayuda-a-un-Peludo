@@ -12,6 +12,7 @@ nav{
     text-align: center;
     display: inline;
     touch-action: none;
+    flex-wrap: wrap;
 }
 ul{
     float: left;
